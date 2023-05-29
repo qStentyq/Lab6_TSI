@@ -173,7 +173,6 @@ window.addEventListener('DOMContentLoaded',() =>
 const listContainer = document.querySelector('#list');
 const submitBtn = document.querySelector('#submit');
 
-
 let generalSecurityQQuantity = 0,
 	informationSecurityQQuantity = 0,
 	humanResourcesSecurityQQuantity = 0;
@@ -231,6 +230,7 @@ function showFirst()
 
 function showQuestion()
 {
+	submitBtn.innerHTML = 'Ответить'
 	submitBtn.onclick = checkAnswer;
 	const headerTemplate = `<h2 class ="title">%title%</h2>`;
 	const title = headerTemplate.replace('%title%', questions[questionIndex]['question'])
@@ -341,7 +341,7 @@ function showLast()
 		<p class="result">%resultHuman%</p>
 	`;
 	let title = "Поздравляем, оценка безопасности вашей компании завершена!",
-		message = "Ниже вы можете увидеть результаты вашей политики безопасности согласно стандарту ISO027001";
+		message = "Ниже вы можете увидеть результаты вашей политики безопасности согласно стандарту ISO27001";
 
 	const secFinalScore = Math.round((generalSecurityScore/generalSecurityQQuantity)*100),
 		  informSecFS = Math.round((informationSecurityScore/informationSecurityQQuantity)*100),
